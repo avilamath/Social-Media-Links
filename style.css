@@ -7,8 +7,9 @@
 html {
     --bg-color: #EDF2FF;
     --text-color: #00082F;
-    --primary-color: #4263EB;
-    --primary-color-dark: #364FC7;
+    --primary-color: #6f42eb;
+    --primary-color-dark: #3f297c;
+    --text-shadow: 5px 5px 2px #aaaaaa;
 }
 
 body {
@@ -18,8 +19,9 @@ body {
 }
 
 .dark {
-    --bg-color: #00082F;
+    --bg-color: #110320;
     --text-color: #FFFFFF;
+    --text-shadow: 5px 5px 2px #2f2d31;
 }
 
 .pink {
@@ -34,6 +36,37 @@ body {
     --text-color: #FFFFFF;
     --primary-color: #D6336C;
     --primary-color-dark: #A61E4D;
+}
+
+.icon {
+    width: 300px;
+    margin: 0px auto;
+    text-align: end;
+    cursor: pointer;
+    color: #00082F;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.icon::before {
+    content: "\f042";
+    font-family: fontawesome;
+    opacity: 0.6;
+}
+
+.icon:hover::before {
+    opacity: 1;
+    transition: opacity 400ms;
+    color: #00082F;
+}
+
+.mode.dark .icon::before {
+    content: "\f042";
+    color: #FFFFFF;
+}
+
+.mode.dark .icon:hover::before {
+    color: #ecf019;
 }
 
 .container {
@@ -63,8 +96,8 @@ h1 {
 p {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    opciaty: 0.8;
-    font-size: 18px;
+    opacity: 0.8;
+    font-size: 16px;
 }
 
 ul {
@@ -83,6 +116,7 @@ ul li a {
     font-size: 14px;
     margin-bottom: 16px;
     border-radius: 6px;
+    box-shadow: var(--text-shadow);
 }
 
 ul li a:hover {
@@ -106,26 +140,4 @@ footer:hover {
 }
 footer a {
     color: var(--text-color);
-}
-
-.icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 29%;
-    right: 39%;
-    cursor: pointer;
-    color: #A61E4D;
-}
-
-.icon::before {
-    content: "\f185";
-    font-family: fontawesome;
-}
-
-.mode.dark .icon::before {
-    content: "\f186";
 }
